@@ -5,33 +5,15 @@ window.onload = () => {
         let i = 0;
         while(contacts.length > i){
             let contact = contacts[i];
-            displayContact(contact.nombre,contact.apellido,contact.telefono,i)
+            displayContact(contact.nombre,contact.apellido,contact.telefono);
             console.log(JSON.stringify(contact));
             i++;
         }
     })
 }
 
-let t = document.querySelectorAll(".details");
-t.forEach(el => {
-    el.addEventListener("click",() => {
-        let id = `${el.id}`;
-        let f_name = document.getElementsByClassName(id)[0].children[1].innerHTML;
-        let l_name = document.getElementsByClassName(id)[0].children[2].innerHTML;
-        let phone = document.getElementsByClassName(id)[0].children[3].innerHTML;
-        showDetails(f_name,l_name,phone);
-    });
-});
-
-function showDetails(name,lname,phone){
-    document.getElementById("pp_char").innerHTML = `${name.charAt(0)}`;
-    document.getElementById("pp_name").innerHTML = `${name} ${lname}`;
-    document.getElementById("pp_phone").innerHTML = `${phone}`;
-    document.getElementById("modal").style.display = "flex";
-}
-
-function displayContact(f_name, l_name, phone,id){
-    let name = contactContainer(f_name,id);
+function displayContact(f_name, l_name, phone){
+    let name = contactContainer(f_name,l_name,phone);
     let contactBody = document.getElementById("contact-book-body");
     contactBody.appendChild(name);
 }
@@ -43,21 +25,33 @@ function createParagraph(val){
     return para;
 }
 
-function contactContainer(name,id){
+function contactContainer(name,l_name,phone){
     let contactInfo = document.createElement("div");
     let contactName = document.createElement("div");
+    let nameDetails = document.createElement("div");
     let nameId = createParagraph(name.charAt(0).toUpperCase());
     let fname = createParagraph(name);
+    let lname = createParagraph(l_name);
+    let ph = createParagraph(phone);
+    let colors = ["#27476e","#f6ae2d","#e7e247","#0cf574","#9a031e","#5f0f40"]
+    const randomIdx = Math.floor(Math.random() * colors.length);
     
-    contactInfo.setAttribute("class","contact-info flex");
-    contactInfo.setAttribute("id",`${id+1}`);
+    contactInfo.setAttribute("class","contact-info");
     contactName.setAttribute("class","contact-name flex");
-    nameId.setAttribute("class","nameId");
-    fname.setAttribute("class","fname");
-    
-    contactName.appendChild(nameId);
-    contactName.appendChild(fname)
+    nameId.setAttribute("class","nameId"); 
+    fname.setAttribute("class","data");
+    lname.setAttribute("class","data");
+    ph.setAttribute("class","data");
+    nameDetails.setAttribute("class","flex name_details");
+    nameId.style.background = colors[randomIdx];
+
+    nameDetails.appendChild(nameId);
+    nameDetails.appendChild(fname)
+    contactName.appendChild(nameDetails);
+    contactName.appendChild(lname);
+    contactName.appendChild(ph);
     contactInfo.appendChild(contactName);
+
     return contactInfo;
 }
 

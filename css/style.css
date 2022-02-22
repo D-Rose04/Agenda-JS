@@ -4,17 +4,25 @@
     margin: 0px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 body{
     overflow-y:hidden;
 }
 
+.flex{
+    display: flex;
+}
 
-.flex{display: flex;}
-.flex-center{justify-content: center;}
-.flex-space-around{justify-content: space-around;}
+.flex-center{
+    justify-content: center;
+}
+
+.flex-space-around{
+    justify-content: space-around;
+}
 
 .container{
-    background-color: rgb(0, 255, 255);
+    background: linear-gradient(30deg, #000000,#43434343);
     padding: 10px 50px ;
     height: 100vh;
     width: 100%;
@@ -23,20 +31,36 @@ body{
 }
 
 .contact-book-header{
-    background-color: rgb(0, 0, 0);
-    padding: 10px;   
+    background-color: rgb(28, 187, 179);
+    padding: 30px;   
     height: 2rem;
-    width: 80%;   
-    margin: 0px auto;
+    width: 100%;   
+    border-radius: 30px 30px 0px 0px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    justify-content: space-around;
+    align-items: center; 
+    
 }
 
 #contact-book-body{
-    background-color:rgb(0, 0, 255);
+    background: rgba(15, 15, 15, 0.4);
     padding: 10px;   
     margin: 0px auto;
-    width: 80%;
+    width: 100%;
     height: 95%;
     overflow-y: scroll;    
+    border-radius: 0px 0px 30px 30px;
+    overflow-x: hidden;   
+  
+}
+
+.start{
+    margin: 0px 0px 0px 20px;
+}
+
+.end{
+    margin: 0px 80px 0px 0px;
 }
 
 .contact-info{
@@ -44,20 +68,31 @@ body{
     padding: 5px;
     border-radius: 50px;
     color: rgb(255, 255, 255);
-    justify-content: space-between;
-    margin: 5px 0px;
+    margin: 15px auto;
     height: 50px;
+    width: 80%;
 }
 
 .contact-info > .contact_name >.fname{
     margin-left: 10px;
+    align-self: center;   
+}
+
+.name_details{
+    align-items: center;
+}
+
+.data{
+    margin-right: 20px;
     align-self: center;
-    
+}
+
+.contact-name{
+    justify-content:space-between;
 }
 
 .nameId{
-    margin: 4px 0px 4px 10px;
-    background-color: rgb(0, 253, 253);
+    margin: 4px 15px 4px 10px;
     border-radius: 50%;
     padding: 5px 8px;
     align-self: center;
@@ -65,42 +100,18 @@ body{
     height: 30px;
 }
 
-.details-section > .details{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 0px;
-    margin: 5px 10px 5px 0px;
-    background-color: transparent;
-    color: white;
+::-webkit-scrollbar{
+    background: linear-gradient(120deg,rgba(128, 128, 128, 0.863),rgba(0, 212, 250, 0.836));
+    width: 12px;
+    height: 50px;
 }
 
-.details-section > .details:hover{
-    background-color: white;
-    color: black;
+::-webkit-scrollbar-thumb{
+    background: rgb(53, 52, 52);
+    height: 80px;
+    border-radius: 20px;
 }
 
-.pop-up{
-    display:none;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(60deg, black,white,black);
-    opacity: 0.8;
-    position: absolute;
-    top: 0;
-}
-
-.pop-up-content{
-    width: 500px;
-    height: 300px;
-    background-color: rgb(0, 0, 0);
-    align-self: center;
-    border-radius: 30px 5px 30px 5px;
-}
-
-.pop-up-info{
-    background-color: aqua;
-    padding: 10px;
-    align-items: center;
-    align-self: center;
+::-webkit-scrollbar-thumb:hover{
+    background: rgb(95, 94, 94);
 }
