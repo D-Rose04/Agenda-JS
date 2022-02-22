@@ -5,22 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/index.js"></script>
+    <script src="./js/index.js" defer></script>
     <title>Agenda</title>
 </head>
 <body>
     <div class="container flex">
         <div class="contact-book-header"></div>
-        <div class="contact-book-body">
+        <div id="contact-book-body">
             <div class="contact-info flex">
-                <div class="contact-name flex">
-                    <p class="Nameid">D</p>
+                <div class="contact_name flex 0">
+                    <p class="nameId">D</p>
                     <p class="fname">David</p>
+                    <p class="lname" hidden>hernandez</p>
+                    <p class="phone" hidden>8095999654513</p>
                 </div>
                 <div class="details-section flex">
-                    <button class="details">></button>
+                    <button class="details" id="0">></button>
                 </div>
             </div>    
+        </div>
+    </div>
+    <div class="pop-up flex flex-center" id="modal">
+        <div class="pop-up-content flex flex-center">
+            <div class="pop-up-info ">
+                <p id="pp_char"></p>
+                <p id="pp_name"></p>
+                <p id="pp_phone"></p>
+            </div>
         </div>
     </div>
 </body>

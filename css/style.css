@@ -1,9 +1,13 @@
 *{
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+body{
+    overflow-y:hidden;
+}
+
 
 .flex{display: flex;}
 .flex-center{justify-content: center;}
@@ -11,10 +15,9 @@
 
 .container{
     background-color: rgb(0, 255, 255);
-    padding: 70px 50px ;
-    height: 5rem;
+    padding: 10px 50px ;
+    height: 100vh;
     width: 100%;
-    justify-content: center;
     flex-direction: column;
     margin: 0px auto;
 }
@@ -23,43 +26,51 @@
     background-color: rgb(0, 0, 0);
     padding: 10px;   
     height: 2rem;
-    width: 100%;   
+    width: 80%;   
+    margin: 0px auto;
 }
 
-.contact-book-body{
+#contact-book-body{
     background-color:rgb(0, 0, 255);
     padding: 10px;   
     margin: 0px auto;
-    width: 100%;
-    
+    width: 80%;
+    height: 95%;
+    overflow-y: scroll;    
 }
 
 .contact-info{
     background-color: rgb(0, 0, 0);
-    padding: 10px;
-    border-radius: 20px;
+    padding: 5px;
+    border-radius: 50px;
     color: rgb(255, 255, 255);
     justify-content: space-between;
+    margin: 5px 0px;
+    height: 50px;
 }
 
-.contact-info > .contact-name >.fname{
+.contact-info > .contact_name >.fname{
     margin-left: 10px;
     align-self: center;
+    
 }
 
-.Nameid{
-    margin-left: 10px;
+.nameId{
+    margin: 4px 0px 4px 10px;
     background-color: rgb(0, 253, 253);
     border-radius: 50%;
     padding: 5px 8px;
     align-self: center;
+    width: 30px;
+    height: 30px;
 }
 
 .details-section > .details{
-    padding: 8px;
-    margin-right: 5px;
-    border-radius: 40%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
     border: 0px;
+    margin: 5px 10px 5px 0px;
     background-color: transparent;
     color: white;
 }
@@ -67,4 +78,29 @@
 .details-section > .details:hover{
     background-color: white;
     color: black;
+}
+
+.pop-up{
+    display:none;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(60deg, black,white,black);
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+}
+
+.pop-up-content{
+    width: 500px;
+    height: 300px;
+    background-color: rgb(0, 0, 0);
+    align-self: center;
+    border-radius: 30px 5px 30px 5px;
+}
+
+.pop-up-info{
+    background-color: aqua;
+    padding: 10px;
+    align-items: center;
+    align-self: center;
 }
