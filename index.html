@@ -4,18 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/index.js" defer></script>
     <title>Agenda</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Scripts -->
+    <script src="./js/functionalities.js" defer></script>
+    <script src="./js/index.js" defer></script>
 </head>
 <body>
+    <!-- Modal -->
+    <div  id="modal">
+        <div class="modal_content flex">
+            <!-- Close btn -->
+            <button id="close-btn">x</button>
+            <form id="form" method="post">
+                <!-- Form user icon -->
+                <div class="row flex user-icon">
+                    <img class="" src="./assets/585e4bf3cb11b227491c339a.png" alt="">
+                </div>
+
+                <!-- Body form -->
+                <div class="row">
+                    <label for="name">Nombre:
+                        <input class="input" type="text" id="name">
+                    </label>
+                </div>
+                
+                <div class="row">
+                    <label for="lname">Apellido:
+                        <input class="input" type="text" id="lname">
+                    </label>
+                </div>
+
+                <div class="row">
+                    <label for="phone">Telefono:
+                        <input class="input" type="text" id="phone">
+                    </label>
+                </div>
+                
+                <!--Form btn section -->
+                <div class="row flex btn-section">
+                    <button id="cancel">Cancelar</button>
+                    <button id="send">Confirmar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Book contact -->
     <div class="container flex">
+
+        <!-- Book contact header -->
         <div class="contact-book-header flex">
             <p class="start">Nombre</p>
             <p class="start">Apellido</p>
             <p class="end">Telefono</p>
         </div>
+        
+        <!-- Book contact body -->
         <div id="contact-book-body"></div>
+        
+        <!-- Button to add a new contact -->
+        <button class="button flex" id="addcontacts">+</button>
     </div>
+    
 </body>
 </html>
